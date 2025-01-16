@@ -20,8 +20,21 @@ terraform {
     }
 }
 
+variable "aws_acess_key" {
+    description = "AWS Access Key ID"
+    type = string
+    sensitive = true
+  
+}
+
+variable "aws_secret_key" {
+  description = "AWS Secret Access Key"
+  type = string
+  sensitive = true
+}
+
 provider "aws" {
     region = "us-east-1"
-    access_key = "AKIA2MNVMIGFFQZTEAPO"
-    secret_key = "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"
+    access_key = "aws_acess_key"
+    secret_key = "aws_secret_key"
 }
